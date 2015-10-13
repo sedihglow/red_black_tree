@@ -1,0 +1,9 @@
+full red black tree implimentation.
+
+Data is just integer data.
+
+rbTest.c tests the tree for various things. 
+
+$cmd #insertions #removals modVal
+
+
