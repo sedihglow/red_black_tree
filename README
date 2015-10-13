@@ -1,4 +1,6 @@
-full red black tree implimentation.
+full red black tree implimentation. 
+
+All functions a programmer would need to use this is in red_black.h
 
 Data is just integer data.
 
