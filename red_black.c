@@ -137,7 +137,10 @@ uint32_t place_data(rbTree *tree, const int32_t toAdd)/*#{{{*/
         errMsg("give_data: new node failed to alloc");
         return 0;
     } 
-
+    
+    /* NOTE: Depending on how you send in and use data, you may not allocate
+             anything here. Easy to miss when reworking this source code to
+             fit another project */
     newNode -> data = (int32_t*) malloc(sizeof(int32_t));
     if(newNode -> data == NULL)
     {
