@@ -61,8 +61,8 @@ typedef struct RBtree
 } rbTree; 
 
                 /* initializations */
-/* initialize a rb tree */
-void rbTree_init(rbTree *tree);
+/* initialize a rb tree, returns 1 if success 0 if error */
+int rbTree_init(rbTree *tree);
 
                 /* insertion */
 /* give a piece of data to a tree, return 1 if success, 0 if error */

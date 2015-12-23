@@ -81,13 +81,18 @@ static rbNode* replace_predecessor(rbNode *node);
 
                    /* initializations */
 
-void rbTree_init(rbTree *tree)/*#{{{*/
+int rbTree_init(rbTree *tree)/*#{{{*/
 {
     /* check if tree is allready made for the pointer */
     assert(tree != NULL);
+
+    if(tree == NULL){
+        return 0;}
     
     /* initialize root */
     tree -> root = NULL;
+
+    return 1;
 } /* end rb_init #}}} */
 
                    /* insertion */
@@ -318,6 +323,8 @@ uint32_t remove_first(rbTree *tree, const int32_t toRemove)/*#{{{*/
 uint32_t remove_each(rbTree *tree, const int32_t toRemove)/*#{{{*/
 {   
     uint32_t removals = 0;
+
+    assert(tree != NULL);
     
     /* while something gets removed, removes all instances of toRemove */
     while(remove_first(tree, toRemove)){
@@ -537,6 +544,7 @@ void removal_case_6(rbTree *tree, rbNode *node)/*#{{{*/
 
 uint32_t data_count(rbTree *tree, const int32_t toCount)/*#{{{*/
 {
+    assert(tree != NULL);
     return count_data(tree -> root ,toCount);
 } /* end data_count #}}} */
 
@@ -634,6 +642,7 @@ inline void right_rotate(rbTree *tree, rbNode *node)/*#{{{*/
 
 rbNode* find_match(rbTree *tree, const int32_t toFind)/*#{{{*/
 {
+    assert(tree != NULL);
     return retrieve_match(tree -> root, toFind);
 } /* end find_place #}}} */
 
