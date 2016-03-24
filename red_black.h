@@ -30,19 +30,17 @@
 #define find_parent(node)  (((node) != NULL) ? (node) -> parent : NULL)
 
 /* finds the sibling of a node */
-#define find_sibling(node) (((node) == (node) -> parent -> child[LEFT])\
-                              ? (node) -> parent -> child[RIGHT]\
+#define find_sibling(node) (((node) == (node) -> parent -> child[LEFT])        \
+                              ? (node) -> parent -> child[RIGHT]               \
                               : (node) -> parent -> child[LEFT])
 
 /* finds a nodes uncle, pointer, or NULL if non existant */
-#define find_uncle(node, grand) (((grand)) /* if grand exists get uncle */\
-                                ? (\
+#define find_uncle(node, grand) (((grand)) /* if grand exists get uncle */     \
+                                ? (                                            \
                                     ((node) -> parent == (grand) -> child[LEFT])\
-                                    ? (grand) -> child[RIGHT]\
-                                    : (grand) -> child[LEFT])\
+                                    ? (grand) -> child[RIGHT]                  \
+                                    : (grand) -> child[LEFT])                  \
                                 : NULL) /* else NULL */
-
-
 
 /* node the tree contains */
 typedef struct RBnode
